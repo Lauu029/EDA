@@ -16,10 +16,11 @@ void resuelveCaso() {
     tree = leerArbol(-1);
     int nod = 0;
     int prof = 1;
-    int proFinal = 0;
-    bool accesible = false;
-    tree.nodoValido(nod, prof, accesible,proFinal);
-    if (!accesible)
+    //Inicializo el maximo a un valor suficientemente grande para que la primera vez que encuentre
+    //un multiplo, la prof sea mayor
+    int proFinal = 100;
+    tree.nodoValido(nod, prof, proFinal);
+    if (nod==0)
         cout << "NO HAY\n";
     else {
         cout << nod << " " << proFinal << endl;

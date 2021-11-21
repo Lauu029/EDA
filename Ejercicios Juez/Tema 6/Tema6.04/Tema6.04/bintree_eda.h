@@ -46,28 +46,27 @@ protected:
    bintree(Link const& r) : raiz(r) {}
    
    //Método que calcula, si es posible, el primer múltiplo de 7 del arbol y su profundidad
-   void multSiete(Link a, int& nod, int prof, bool& valido, int& proFinal)  {
+   void multSiete(Link a, int& nod, int prof, int& proFinal)  {
        
        if (a != nullptr) {
            //Si el valor del nodo es primo deja de buscar
-           if (primo(a->elem)) {
-               valido = false;
+            if (!primo(a->elem)) {
+               
+                //Si el número es multiplo de 7 no busca más
+                if ((a->elem % 7 == 0)) {
+                   
+                    if (proFinal >prof) {
+                        nod = a->elem;
+                        proFinal = prof;
+
+                    }
+                }
+                multSiete(a->left, nod, prof+1,  proFinal);
+                //si ya ha encontrado un elemento en la izquierda no sigue buscando por la derecha
+                multSiete(a->right, nod, prof+1, proFinal);
+               
            }
-           else {
-               //valido = true;
-               //Si el número es multiplo de 7 no busca más
-               if ((a->elem % 7 != 0)) {
-                   multSiete(a->left, nod, prof+1, valido, proFinal);
-                   //si ya ha encontrado un elemento en la izquierda no sigue buscando por la derecha
-                   if (!valido)
-                       multSiete(a->right, nod, prof+1, valido, proFinal);
-               }
-               else {
-                   nod = a->elem;
-                   valido = true;
-                   proFinal = prof;
-               }
-           }
+              
        }
        
    }
@@ -120,8 +119,8 @@ public:
        return esPrimo;
    }
    //Devuelve valor del nodo y profundidad y si es accesible
-   void nodoValido(int& nod, int prof, bool& val,int& proFinal) {
-       multSiete(raiz, nod, prof, val, proFinal);
+   void nodoValido(int& nod, int prof,int& proFinal) {
+       multSiete(raiz, nod, prof, proFinal);
    }
    
    // recorridos
