@@ -13,16 +13,16 @@ void arbolValido(bintree<int> tree, bool& esValido, int prof, int& proFinal) {
     if (!tree.empty()) {
         //almacena los valores de los hijos y el padre
         int pad = tree.root();
-        int hi=0, dr=0;
+        int hi=-1, dr=-1;
         //si no existen los hijos lo pone a 0
         if (!tree.left().empty()) hi = tree.left().root();
         if (!tree.right().empty()) dr = tree.right().root();
         //Comprueba primero si tiene hijos
        
-        if (hi != 0) {
+        if (hi != -1) {
             if (pad >= hi + 18)
             {
-                if (dr != 0) {
+                if (dr != -1) {
                     //dos hijos con 2 años de diferencia
                     if (hi >= dr + 2) esValido = true;
                     //dos hijos con menos de 2 años de diferencia
@@ -35,13 +35,16 @@ void arbolValido(bintree<int> tree, bool& esValido, int prof, int& proFinal) {
             else esValido = false;
         }
         //Sin hijo izquierdo y con hijo derecho
-        else if (dr != 0) esValido = false;
+        else if (dr != -1) esValido = false;
         else esValido = true;
 
         //Si es válido sigue la búsqueda
         if (esValido) {
             arbolValido(tree.left(), esValido, prof+1, proFinal);
-            arbolValido(tree.right(), esValido, prof +1, proFinal);
+            //Vuelve a comprobar si es válido después de haber pasado por el hijo izquierdo
+            if (esValido) {
+                arbolValido(tree.right(), esValido, prof +1, proFinal);
+            }
             if(proFinal<prof) proFinal = prof;
         }
     }

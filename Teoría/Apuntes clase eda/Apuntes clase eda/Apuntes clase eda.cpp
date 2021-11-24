@@ -1,4 +1,5 @@
 #include "bintree_eda.h"
+#include <string>
 
 /*Tema 6
 * ARBOLES BINARIOS
@@ -8,9 +9,6 @@ int main() {
 	bintree<char>b('b');
 	bintree<char>a(b, 'a', c);
 }*/
-
-
-
 
 /*Como destruir la estructura
 * Delegamos cada cosa al izq y al derecho y como es recursiva se delega a los hijos
@@ -197,3 +195,25 @@ bool esOrdenado(..t, int& min, int& max) {
 
 	return esIz && esDr && t.root() > maxIz && t.root() < minDir;
 }*/
+
+/*Tema 7 diccionarios
+* TAD map*/
+
+//Ejemplo Apariciones palabras
+//Aquí metes la plantilla guapa
+
+/*
+map <string, int> apariciones;
+
+string pal;
+cin >> pal;
+while (!cin.fail()) {
+	if (apariciones.count(pal)) 
+		apariciones[pal]++;
+	else apariciones.insert({ pal, 1 });
+	cin >> pal;
+}
+
+//Listar
+for (auto [p,n] : apariciones)
+		cout << p << " " << n << endl;*/
