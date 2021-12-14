@@ -2,9 +2,25 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <vector>
 #include "bintree_eda.h"
 using namespace std;
-
+bool arbolSimetrico(bintree<char> izq, bintree<char> dr)
+{
+    //los dos son vacíos
+    if (izq.empty() && dr.empty())
+        return true;
+    else if ((izq.empty() && !dr.empty()) || (dr.empty() && !izq.empty()))
+        return false;
+    else
+        return arbolSimetrico(izq.left(), dr.right()) && arbolSimetrico(izq.right(), dr.left());
+}
+bool simetrico(bintree<char>tree) {
+    if (tree.empty())
+        return true;
+    else
+        return arbolSimetrico(tree.left(), tree.right());
+}
 
 
 
@@ -15,7 +31,9 @@ void resuelveCaso() {
     int n;
     bintree<char> tree;
     tree = leerArbol('.');
-    
+    bool aSimetrico = simetrico(tree);
+    if (aSimetrico)cout << "SI\n";
+    else cout << "NO\n";
 }
 
 

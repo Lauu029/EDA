@@ -217,3 +217,16 @@ while (!cin.fail()) {
 //Listar
 for (auto [p,n] : apariciones)
 		cout << p << " " << n << endl;*/
+
+/*
+* para decidir en que punto del array se mete el numero se hace el código ascii de la última
+* letra de la palabra. Se hace ese número % num elementos del array y se mete en la posición
+* del valor que salga(al final todas las palabras que acaban igual están en la misma posición del array)
+* 
+* no implementamos estas funciones, solo las utilizamos
+*/
+
+/*
+* aaaaaaaaaa socorro 
+* hash suena a algún tipo de droga sintética de las que te hace creer que eres un molinillo
+*/
