@@ -7,9 +7,9 @@
 #include <unordered_map>
 using namespace std;
 using Lista = map<string, int>;
-using OrdenSalida = unordered_map<string, int>;
+using OrdenSalida = map<int, vector<string>, greater<int>>;
 
-void resolver(string const& primerDeporte, Lista& deportes){
+void resolver(string const& primerDeporte, Lista& deportes, OrdenSalida& sal){
     string deporte, alumno;
     deporte = primerDeporte;
     map<string, string> alumnos;
@@ -34,49 +34,15 @@ void resolver(string const& primerDeporte, Lista& deportes){
                     alumnos[alumno] = "borrado";
                 }
             }
+            
             cin >> alumno;
         }
-
+        sal[deportes[alumnos[alumno]]].push_back(deporte);
         //El último que ha leido(si no es fin) es el siguiente deporte
         deporte = alumno;
     }
 }
-void ordenaLista(Lista& deportes, OrdenSalida& depOrden) {
-    string deporte;
-   
-    //guarda el primer deporte de la lista y su valor
-    string aux1 = deportes.begin()->first;
-    int valDep1 = deportes[aux1];
-    string aux2;
-    int valDep2;
-    for (auto& s : deportes) {
-        //coge los dos valores que le toca
-        aux2 = s.first;
-        valDep2 = s.second;
-         //los compara con el resto del vector
-         for (auto& g : deportes) {
-             if (g.second > valDep1) {
-                 valDep1 = g.second;
-                 aux1 = g.first;
-             }
-             else {
-                 
-             }
-         }
 
-        //de aqui sale un valor de deportes y uno del numero que tienen que ser los mas grandes
-        //si no está ya, lo mete
-         if (depOrden.count(aux1) == 0) {
-             depOrden[aux1] = valDep1;
-         }
-         else {
-             depOrden[aux2] = valDep2;
-         }
-    }
-    
-    
-    //cojo el primer valor de la lista de deportes
-}
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
@@ -87,11 +53,15 @@ bool resuelveCaso() {
 
     Lista deportes;
     OrdenSalida depOrden;
-    resolver(primerDeporte, deportes);
-    ordenaLista(deportes, depOrden);
+    resolver(primerDeporte, deportes,depOrden);
+    
     for (auto& g : depOrden) {
 
-        cout << g.first << " " << g.second << endl;
+        for (int i = 0; i < g.second.size(); i++) {
+            cout << g.second[i] << " " << g.first << endl;
+
+        }
+        
     }
     cout << "---\n";
     return true;
