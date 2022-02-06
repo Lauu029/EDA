@@ -1,5 +1,5 @@
-#ifndef carnet_puntos_h;
-#define carnet_puntos_h;
+#ifndef carnet_puntos_h
+#define carnet_puntos_h
 #include <unordered_map>
 #include <vector>
 #include <string>
@@ -37,17 +37,24 @@ public:
 		}
 		else
 		{
-			//el conductor tiene 0 puntos
-			if (carnets[dni] == 0) {
+			numCar[carnets[dni]]--;
 
-			}
+			carnets[dni] -= puntos;
+
+			if (carnets[dni] < 0) carnets[dni] = 0;
+
+			numCar[carnets[dni]]++;
 		}
 	}
-	void consultar(string dni) {
-
+	int consultar(string dni) {
+		if (carnets.count(dni) == 0)
+			throw domain_error("Conductor inexistente");
+		return carnets[dni];
 	}
-	void cuantos_con_puntos(int puntos) {
-
+	int cuantos_con_puntos(int puntos) {
+		if (puntos < 0 || puntos>15) 
+			throw domain_error("Puntos no validos");
+		return numCar[puntos];
 	}
 
 };
