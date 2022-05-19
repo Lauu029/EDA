@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tema1.2", "Tema1.2\Tema1.2.vcxproj", "{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tema1.1", "Tema1.1\T 1-1.vcxproj", "{9682DE3E-4630-4D8C-932C-A33F20D511EA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tema1.3", "Tema1.3\Tema1.3.vcxproj", "{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{471FF2EB-283A-4B7A-848F-590C0520DC40}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Plantillas\Plantilla Inclusion.cpp = ..\..\..\Plantillas\Plantilla Inclusion.cpp
+		..\..\..\Plantillas\PlantillaActualizacionDiccionario.cpp = ..\..\..\Plantillas\PlantillaActualizacionDiccionario.cpp
+		..\..\..\Plantillas\PlantillaAnagramas.cpp = ..\..\..\Plantillas\PlantillaAnagramas.cpp
+		..\..\..\Plantillas\PlantillaBienSituado.cpp = ..\..\..\Plantillas\PlantillaBienSituado.cpp
+		..\..\..\Plantillas\PlantillaCasanova.cpp = ..\..\..\Plantillas\PlantillaCasanova.cpp
+		..\..\..\Plantillas\PlantillaConcierto.cpp = ..\..\..\Plantillas\PlantillaConcierto.cpp
+		..\..\..\Plantillas\PlantillaCuela.cpp = ..\..\..\Plantillas\PlantillaCuela.cpp
+		..\..\..\Plantillas\PlantillaCurvaConcava.cpp = ..\..\..\Plantillas\PlantillaCurvaConcava.cpp
+		..\..\..\Plantillas\PlantillaElemPerdido.cpp = ..\..\..\Plantillas\PlantillaElemPerdido.cpp
+		..\..\..\Plantillas\PlantillaEligiendoDeporte.cpp = ..\..\..\Plantillas\PlantillaEligiendoDeporte.cpp
+		..\..\..\Plantillas\PlantillaFormasSumar.cpp = ..\..\..\Plantillas\PlantillaFormasSumar.cpp
+		..\..\..\Plantillas\PlantillaJuezCasosIlimitados.cpp = ..\..\..\Plantillas\PlantillaJuezCasosIlimitados.cpp
+		..\..\..\Plantillas\PlantillaJuezCentinela.cpp = ..\..\..\Plantillas\PlantillaJuezCentinela.cpp
+		..\..\..\Plantillas\PlantillaJuezNumeroCasos.cpp = ..\..\..\Plantillas\PlantillaJuezNumeroCasos.cpp
+		..\..\..\Plantillas\PlantillaLucesNavidad.cpp = ..\..\..\Plantillas\PlantillaLucesNavidad.cpp
+		..\..\..\Plantillas\PlantillaNodosHojasYAltura.cpp = ..\..\..\Plantillas\PlantillaNodosHojasYAltura.cpp
+		..\..\..\Plantillas\PlantillaNodosHojasYAltura_Javi.cpp = ..\..\..\Plantillas\PlantillaNodosHojasYAltura_Javi.cpp
+		..\..\..\Plantillas\PlantillaRefsCruzadas.cpp = ..\..\..\Plantillas\PlantillaRefsCruzadas.cpp
+		..\..\..\Plantillas\PlantillaTramosNavegables.cpp = ..\..\..\Plantillas\PlantillaTramosNavegables.cpp
+		..\..\..\Plantillas\PlantillaZurdos.cpp = ..\..\..\Plantillas\PlantillaZurdos.cpp
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tema1.4", "Tema1.4\Tema1.4.vcxproj", "{D5777994-6A94-4B50-B369-7CD817C5C9D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Debug|x64.ActiveCfg = Debug|x64
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Debug|x64.Build.0 = Debug|x64
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Debug|x86.ActiveCfg = Debug|Win32
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Debug|x86.Build.0 = Debug|Win32
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Release|x64.ActiveCfg = Release|x64
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Release|x64.Build.0 = Release|x64
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Release|x86.ActiveCfg = Release|Win32
+		{FC48B0F9-75D0-4B1A-8F83-22A183AE2F1E}.Release|x86.Build.0 = Release|Win32
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Debug|x64.ActiveCfg = Debug|x64
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Debug|x64.Build.0 = Debug|x64
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Debug|x86.ActiveCfg = Debug|Win32
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Debug|x86.Build.0 = Debug|Win32
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Release|x64.ActiveCfg = Release|x64
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Release|x64.Build.0 = Release|x64
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Release|x86.ActiveCfg = Release|Win32
+		{9682DE3E-4630-4D8C-932C-A33F20D511EA}.Release|x86.Build.0 = Release|Win32
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Debug|x64.ActiveCfg = Debug|x64
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Debug|x64.Build.0 = Debug|x64
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Debug|x86.ActiveCfg = Debug|Win32
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Debug|x86.Build.0 = Debug|Win32
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Release|x64.ActiveCfg = Release|x64
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Release|x64.Build.0 = Release|x64
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Release|x86.ActiveCfg = Release|Win32
+		{2A8AFF3F-D023-49F3-B599-3FD9849FD8F2}.Release|x86.Build.0 = Release|Win32
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Debug|x64.ActiveCfg = Debug|x64
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Debug|x64.Build.0 = Debug|x64
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Debug|x86.ActiveCfg = Debug|Win32
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Debug|x86.Build.0 = Debug|Win32
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Release|x64.ActiveCfg = Release|x64
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Release|x64.Build.0 = Release|x64
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Release|x86.ActiveCfg = Release|Win32
+		{D5777994-6A94-4B50-B369-7CD817C5C9D1}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA9F309B-E67C-449E-BA28-539F08FA9872}
+	EndGlobalSection
+EndGlobal
