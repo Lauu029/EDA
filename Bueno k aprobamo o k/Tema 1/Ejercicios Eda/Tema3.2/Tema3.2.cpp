@@ -1,4 +1,4 @@
-﻿// Nombre del alumno Laura Gómez Bodego
+// Nombre del alumno Laura Gómez Bodego
 // Usuario del Juez VJ23
 
 #include <iostream>
@@ -8,17 +8,24 @@
 using namespace std;
 
 // función que resuelve el problema
-void resolver(vector<char>& sol, int k, int n, int m) {
-	for (char i = 'a' ; i < 'a'+m; i++)
+void resolver(vector<char>& sol, vector<bool>& marcas, int k, int n, int m) {
+	for (char i = 'a'; i < 'a' + m; i++)
 	{
 		sol[k] = i;
+		if (!marcas[i - 'a']) {
 
-		if (k == n - 1) {
-			for (int j = 0; j <= k; j++)
-				cout << sol[j];
-			cout << endl;
+			if (k == n - 1) {
+				for (int j = 0; j <= k; j++)
+					cout << sol[j];
+				cout << endl;
+			}
+			else {
+				//Marcar desmarcar
+				marcas[i - 'a'] = true;
+				resolver(sol, marcas, k + 1, n, m);
+				marcas[i - 'a'] = false;
+			}
 		}
-		else resolver(sol, k + 1, n, m);
 
 	}
 }
@@ -32,7 +39,8 @@ bool resuelveCaso() {
 	if (!std::cin)
 		return false;
 	vector<char>sol(n);
-	resolver(sol, 0, n, m);
+	vector<bool>marcas(m, false);
+	resolver(sol, marcas, 0, n, m);
 
 	// escribir sol
 	cout << endl;

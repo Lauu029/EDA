@@ -1,42 +1,59 @@
-﻿// Nombre del alumno Laura Gómez Bodego
+// Nombre del alumno Laura Gómez Bodego
 // Usuario del Juez VJ23
+
 
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <vector>
+
 using namespace std;
 
 // función que resuelve el problema
-void resolver(vector<char>& sol, int k, int n, int m) {
-	for (char i = 'a' ; i < 'a'+m; i++)
+void resolver(vector<int>& sol, int k, int n, int m) {
+	for (int i = 0; i < m; i++)
 	{
 		sol[k] = i;
-
 		if (k == n - 1) {
-			for (int j = 0; j <= k; j++)
-				cout << sol[j];
+			for (int j = 0; j <=k; j++)
+			{
+				switch (sol[j])
+				{
+				case 0:
+					cout << "azul";
+					break;
+				case 1:
+					cout << "rojo";
+					break;
+				case 2:
+					cout << "verde";
+					break;
+				default:
+					break;
+				}
+				if (j < k)cout << " ";
+			}
 			cout << endl;
 		}
-		else resolver(sol, k + 1, n, m);
-
+		else {
+			resolver(sol, k + 1, n,m);
+		}
 	}
+
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
 	// leer los datos de la entrada
-	int n, m;
-	cin >> m >> n;
-	if (!std::cin)
+	int n;
+	cin >> n;
+	if (n == 0)
 		return false;
-	vector<char>sol(n);
-	resolver(sol, 0, n, m);
+	vector<int>sol(n);
+	resolver(sol, 0, n, 3);
 
-	// escribir sol
 	cout << endl;
-
 	return true;
 
 }

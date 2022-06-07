@@ -1,4 +1,4 @@
-﻿// Nombre del alumno Laura Gómez Bodego
+// Nombre del alumno Laura Gómez Bodego
 // Usuario del Juez VJ23
 
 #include <iostream>
@@ -7,32 +7,44 @@
 #include <vector>
 using namespace std;
 
-// función que resuelve el problema
-void resolver(vector<char>& sol, int k, int n, int m) {
-	for (char i = 'a' ; i < 'a'+m; i++)
-	{
-		sol[k] = i;
-
-		if (k == n - 1) {
-			for (int j = 0; j <= k; j++)
-				cout << sol[j];
-			cout << endl;
+bool esValida(vector <int>& solucion, int k) {
+	bool correcto = true;
+	int i = 0;
+	while (i < k && correcto) {
+		if ((solucion[i] == solucion[k]) || abs(solucion[k] - solucion[i]) == k - i)
+			correcto = false;
+		else
+			i++;
+	}
+	return correcto;
+}
+void nReinas(vector <int>& solucion, int k, int n) {
+	for (int i = 0; i < n; i++) {
+		solucion[k] = i;
+		if (esValida(solucion, k)) {
+			if (k == n - 1) {
+				cout << "Solucion: ";
+				for (int i = 0; i < n; i++)
+					cout << solucion[i] << " ";
+				cout << endl;
+			}
+			else {
+				nReinas(solucion, k + 1, n);
+			}
 		}
-		else resolver(sol, k + 1, n, m);
-
 	}
 }
-
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
 	// leer los datos de la entrada
-	int n, m;
-	cin >> m >> n;
+	int n;
+	cin >> n;
 	if (!std::cin)
 		return false;
-	vector<char>sol(n);
-	resolver(sol, 0, n, m);
+	vector<int>sol(n);
+	
+	nReinas(sol, 0, n);
 
 	// escribir sol
 	cout << endl;

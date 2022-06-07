@@ -7,7 +7,6 @@ using namespace std;
 // función que resuelve el problema
 int resolver(vector<int> const& v1, vector<int> const& v2, int ini, int fin) {
     if (ini == fin) return v1[ini];
-   
     int mid = (ini + fin) / 2;
     if (v1[mid] == v2[mid]) return resolver(v1, v2, mid + 1, fin);
     else return resolver(v1, v2, ini, mid );
