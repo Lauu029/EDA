@@ -1,19 +1,62 @@
-// Tema4.04.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+// Nombre del alumno Laura Gómez Bodego
+// Usuario del Juez VJ23
+
 
 #include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "Hora.h"
+#include "Pelicula.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+
+
+// Resuelve un caso de prueba, leyendo de la entrada la
+// configuración, y escribiendo la respuesta
+bool resuelveCaso() {
+	// leer los datos de la entrada
+	int numPelis;
+	cin >> numPelis;
+	if (numPelis == 0)
+		return false;
+	vector<Pelicula> pelis (numPelis);
+	for (int i = 0; i < numPelis; i++)
+	{
+		cin >> pelis[i];
+	}
+	sort(pelis.begin(), pelis.end());
+	for (int i = 0; i < numPelis; i++)
+	{
+		cout << pelis[i].h<<" "<<pelis[i].nombre<< endl;
+	}
+	cout << "---\n";
+	// escribir sol
+
+	return true;
+
 }
 
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
+int main() {
+	// Para la entrada por fichero.
+	// Comentar para acepta el reto
+#ifndef DOMJUDGE
+	std::ifstream in("datos.txt");
+	auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
+#endif 
 
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
+
+	while (resuelveCaso())
+		;
+
+
+	// Para restablecer entrada. Comentar para acepta el reto
+#ifndef DOMJUDGE // para dejar todo como estaba al principio
+	std::cin.rdbuf(cinbuf);
+	system("PAUSE");
+#endif
+
+	return 0;
+}
