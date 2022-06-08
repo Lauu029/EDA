@@ -18,11 +18,12 @@ int Polinomio::calculate(int num)
 
 void Polinomio::add(const pair<int, int>& monomio)
 {
+	if (monomio.second == 0) return;
 	if (polinomio.empty()) {
 		polinomio.push_back(monomio);
 		return;
 	}
-
+	
 	int i = 0;
 	bool encontrado = false;
 

@@ -23,7 +23,7 @@ bool resuelveCaso() {
 	bool finLectura = false;
 	Polinomio p;
 	while (!finLectura) {
-		if (coef == 0) {
+		if (coef == 0 && exp==0) {
 			finLectura = true;
 			continue;
 		}
