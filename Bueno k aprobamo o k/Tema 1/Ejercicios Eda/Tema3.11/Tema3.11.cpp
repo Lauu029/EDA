@@ -8,9 +8,10 @@
 #include <vector>
 
 using namespace std;
-bool esValida(vector<int>& sol, int k, vector<int>& cant) {
-	if (k == 0)return true;
-	if (sol[k] == sol[k - 1]) return false;
+bool esValida(vector<int>& sol, int k, vector<int>& cant,int consumido,int consMax) {
+	if (k > 2) {
+		if (sol[k] == sol[k - 1] && sol[k] == sol[k - 2]) return false;
+	}
 	int sum = 0;
 	for (int i = 0; i < cant.size(); i++)
 	{
@@ -18,8 +19,8 @@ bool esValida(vector<int>& sol, int k, vector<int>& cant) {
 			sum += cant[i];
 		}
 	}
-	if (cant[sol[k]] + 1 >= sum)return false;
-	else return true;
+	if (cant[sol[k]] > sum + 1)return false;
+	else return consumido <= consMax;
 }
 // función que resuelve el problema
 void resolver(vector<int>& sol, const vector<int>& consumo, vector<int>& cant, int k, int numCol, int longSol, int consMax, int& nSol, int consumido) {
@@ -29,16 +30,12 @@ void resolver(vector<int>& sol, const vector<int>& consumo, vector<int>& cant, i
 		sol[k] = i;
 		cant[i]++;
 		consumido += consumo[i];
-		if (esValida(sol, k, cant)) {
+		if (esValida(sol, k, cant,consumido,consMax)) {
 			if (k == longSol - 1) {
-				if (consumido <= consMax) {
 					nSol++;
-				}
-
 			}
 			else {
 				resolver(sol, consumo, cant, k + 1, numCol, longSol, consMax, nSol, consumido);
-
 			}
 		}
 		consumido -= consumo[i];
