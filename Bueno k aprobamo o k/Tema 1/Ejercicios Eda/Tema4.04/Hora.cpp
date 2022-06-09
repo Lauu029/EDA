@@ -45,7 +45,7 @@ void Hora::operator+=(const Hora& h)
 		hora += extra;
 	}
 	hora += h.hora;
-	if (hora > 23) throw std::invalid_argument("ERROR! Los datos sobrepasan los valores aceptables.");
+	if (hora > 23) throw new exception();
 }
 
 ostream& operator<<(ostream& out, const Hora& h)
