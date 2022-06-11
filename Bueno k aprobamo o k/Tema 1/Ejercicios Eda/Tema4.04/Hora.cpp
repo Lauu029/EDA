@@ -27,7 +27,7 @@ bool Hora::operator<(const Hora& h) const
 
 bool Hora::operator==(const Hora& h) const
 {
-	return hora == h.hora && min == h.min && sec == h.sec;
+	return (hora == h.hora && min == h.min && sec == h.sec);
 }
 
 void Hora::operator+=(const Hora& h) 

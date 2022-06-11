@@ -3,9 +3,9 @@
 
 istream& operator>>(istream& input, Pelicula& p)
 {
-	char c = ' ';
+
 	Hora duracion;
-	input >> p.h >> c >> duracion ;
+	input >> p.h >> duracion ;
 	getline(input, p.nombre);
 	p.h += duracion; 
 	return input;

@@ -51,7 +51,7 @@ protected:
          act = act->sig;
          return *this;
       }
-      
+
       Iterador operator++(int) { // ++ postfijo
          Iterador ret(*this);
          operator++();
