@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 
+
 using namespace std;
 // función que resuelve el problema
 TipoSolucion resolver(TipoDatos datos) {
@@ -17,7 +18,8 @@ TipoSolucion resolver(TipoDatos datos) {
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
     // leer los datos de la entrada
-    
+    string pre, in;
+    getline
     if (! std::cin)
         return false;
     
