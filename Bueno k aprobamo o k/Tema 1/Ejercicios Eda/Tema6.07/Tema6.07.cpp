@@ -9,14 +9,14 @@
 #include "bintree_eda.h"
 
 using namespace std;
-bool simetrico(bintree<char> hi, bintree<char>hd) {
+bool simetrico(const bintree<char>& hi, const bintree<char>& hd) {
     if (hi.empty() && hd.empty())return true;
     else if (!hi.empty() && !hd.empty())
         return simetrico(hi.left(), hd.right()) && simetrico(hi.right(), hd.left());
     else return false;
 }
 // función que resuelve el problema
-bool resolver(bintree<char> tree) {
+bool resolver(const bintree<char>& tree) {
     if (tree.empty()) return true;
     else return simetrico(tree.left(), tree.right());
 
