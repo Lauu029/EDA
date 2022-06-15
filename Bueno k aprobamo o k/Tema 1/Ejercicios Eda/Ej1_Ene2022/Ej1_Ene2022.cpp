@@ -16,13 +16,9 @@ void resolve(int posFinal, list<char>& lista, list<char>& cuela) {
 		++cont;
 		a++;
 	}
-
 	for(auto b:cuela){
-
-
 		a = lista.insert(a, b);
 		++a;
-
 	}
 }
 void resuelveCaso() {
