@@ -5,20 +5,34 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include <vector>
 #include <list>
 using namespace std;
 
-void resolve(int posFinal, list<char>& lista, list<char>& cuela) {
-	list<char>::iterator a = lista.begin();
-	int cont = 0;
-	while (cont < posFinal) {
-		++cont;
-		a++;
-	}
-	for(auto b:cuela){
-		a = lista.insert(a, b);
-		++a;
+void resolve(int posFinal, list<char>& lista, int pos, int lon) {
+	if (!lista.empty()) {
+		auto a = lista.begin();
+		auto b = lista.begin();
+
+		for (int cont = 0; cont < posFinal; ++cont) {
+			if (b == lista.end()) return;
+			++b;
+			if (a == lista.end()) return;
+			++a;
+
+
+		}
+		for (int cont = posFinal; cont < pos; ++cont) {
+			if (b == lista.end()) return;
+			++b;
+
+		}
+		for (int i = 0; i < lon; ++i)
+		{
+			if (b != lista.cend())
+				lista.insert(a, *b);
+			if (b != lista.cend())
+				b = lista.erase(b);
+		}
 	}
 }
 void resuelveCaso() {
@@ -31,26 +45,28 @@ void resuelveCaso() {
 	//valora si se va a poder hacer el ejercicio
 	bool val = true;
 	if (k > pos) val = false;
-	list<char>lista, cuela;
+	list<char>lista;
 	char c;
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; ++i)
 	{
 		cin >> c;
+		lista.push_back(c);
 
-		if (val && i >= pos && i < pos + lon) {
-			cuela.push_back(c);
-		}
-		else {
-			lista.push_back(c);
-		}
 	}
 	int posFinal = pos - k;
-	if (val) resolve(posFinal, lista, cuela);
-	for (auto& it : lista)
-	{
-		cout << it << " ";
+	if (!lista.empty()) {
+		if (val) resolve(posFinal, lista, pos, lon);
+
+		auto it = lista.begin();
+		while (it != lista.end())
+		{
+			cout << *it << " ";
+			++it;
+			lista.pop_front();
+		}
+		lista.clear();
 	}
-	cout<< endl;
+	cout << "\n";
 
 }
 

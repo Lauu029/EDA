@@ -26,7 +26,7 @@ public:
 		}
 	}
 	void quitar(string dni, int puntos) {
-		if (carnets.count(dni) ==0) {
+		if (carnets.count(dni) == 0) {
 			throw domain_error("Conductor inexistente");
 		}
 		else {
@@ -40,19 +40,19 @@ public:
 		}
 	}
 	int consultar(string dni) {
-		if (carnets.count(dni) ==0) {
+		if (carnets.count(dni) == 0) {
 			throw domain_error("Conductor inexistente");
 		}
-			return carnets[dni];
-		
+		return carnets[dni];
+
 	}
 	int cuantos_con_puntos(int puntos) {
 		if (puntos < 0 || puntos>15) {
 			throw domain_error("Puntos no validos");
 		}
-		
-			return cantPuntos[puntos];
-		
+
+		return cantPuntos[puntos];
+
 	}
 };
 
